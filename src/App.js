@@ -10,8 +10,8 @@ function App() {
     }
 
     const clear=()=>{
-        setResult("");
-    }
+        setResult(""); 
+    } 
 
     const backspace=()=>{
         setResult(result.slice(0,result.length-1));// or -1
