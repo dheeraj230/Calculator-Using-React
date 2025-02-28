@@ -1,92 +1,114 @@
-/* body{
-    background: #ffffff;
-} */
+/* 🌟 Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-*{
-    font-family: Arial, Helvetica, sans-serif;
+/* 🌟 Full Screen Centering */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Light Gradient */
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🌟 Calculator Container */
+.container {
+    position: relative;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.5); /* Glass Effect */
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🌟 Bright Mode */
+.bright-mode {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* 🌟 Display Input */
+input[type="text"] {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    color: black;
+    text-align: right;
+    font-size: 28px;
+    padding: 10px;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 Keypad Grid */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px 0;
+}
+
+/* 🌟 Buttons */
+button {
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 Light Buttons */
+.light-btn {
+    background: #ffebcc;
+    color: black;
+}
+
+.light-btn:hover {
+    background: #ffddaa;
+}
+
+/* 🌟 Special Buttons */
+.highlight {
+    background: #99c4e0;
+}
+
+.highlight:hover {
+    background: #87b3d0;
+}
+
+/* 🌟 Bigger Buttons for CTA */
+.big-btn {
+    grid-column: span 2;
     font-size: 20px;
 }
 
-body{
-    display:flex ;
-    justify-content: center;
-    align-items: center;
+/* 🌟 Brightness Toggle */
+.toggle-brightness {
+    background: #ffe680;
+    color: black;
 }
 
-.container{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    width: 256px;
-    text-align: center;
-    border: 10px solid #101116;
-    background:#101116 ;
-    border-radius: 5px;
-
-
-
+.toggle-brightness:hover {
+    background: #ffd700;
 }
 
-.keypad{
-    display: grid;
-    /* grid-template-columns: repeat (4, 1fr); */
-    /* grid-template-columns: auto auto auto auto; */
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-auto-rows: minmax(60px,auto);
-}
-
-input[type="text"]{
-    height: 75px;
-    width: 249px;
-    background-color: #28293000;
-    /* background-color: #2ad33800; */
-    border: 0px;
-    color: #ffffff;
-    text-align: right;
-    font-size: 25px;
-    font-weight: 500;
-    letter-spacing: 1px;
-
-}
-
-#clear{
-    grid-column: 1/3;
-    grid-row: 1;
-    color: #262834;
-
-}
-
-#result{
-    grid-column: 3/5;
-    grid-row: 5;
-    color: #262834;
-    /* color: #606aa1; */
-}
-
-#backspace{
-    color: #262834;
-}
-
-button{
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color:#262834 ;
-    color: #ffffff;
-    font-weight: 500;
-
-}
-
-input:focus,
-input:active,
-button:focus,
-button:active{
-    outline: none;
-}
-
-.highlight{
-    background: #56cbdb;
+/* 🌟 Responsive */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
 }
